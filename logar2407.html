@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+			background-color: #D97D48;
+			margin: 0;
+			
+        }
+		
+		header{
+			background-color: #F2B872;
+            height: 120px;
+			color: #732727;
+			margin-bottom: 10px;
+			margin-top:0px;
+			border-bottom: 5px solid #732727;
+			
+        }
+		
+        h1{           
+            color: #732727;
+            width: 290px;
+            padding: 15px;
+			
+        }
+		
+		label{
+			color: #732727;
+			margin-left: 15px;
+			font-weight: bold;
+			
+		}
+
+        form{
+            background-color: #F2B872;
+            border:3px solid #732727;
+            width: 550px;
+			padding: 25px;
+
+			
+        }
+
+        input{
+            width: 300px;
+            border-bottom: 2px solid #732727 ;
+            margin: 7px;
+            padding: 8px;
+            border-left: #F2B872;
+			border-right: #F2B872;
+			border-top: #F2B872;
+			width: 520px;
+
+        }
+
+        input::placeholder{
+            color: #732727;
+            font-weight: bold;
+			
+			
+        }
+
+        button{
+            border:3px solid #732727 ;
+            background-color: #732727;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 28px;
+            width: 215px;
+			
+			
+        }
+	
+		
+    </style>
+        <script>
+            var usuarios = new Array()
+            function autenticar(){
+                var clogin = document.getElementById('idlogin').value
+                var csenha = document.getElementById('idPassword1').value
+
+                usuarios = JSON.parse(localStorage.getItem('Usuarios'))
+                if(usuarios == null)
+                    usuarios = new Array()
+                
+                var encontrou = false
+                for(var i=0; i<usuarios.length; i++){
+                    if(clogin == usuarios[i].login && csenha == usuarios[i].senha){
+                        encontrou = true
+                    }
+                }
+                if(encontrou == true){
+                    alert('Bem-vindo!')
+                    window.open('home2407.html')
+                }else{
+                    alert('Login ou Senha não existem no sistema!')
+                }
+            }
+        </script>
+    </head>
+    <body>
+	<center>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+					<header>
+                    <h1>Bem-vindo a Aplicação</h1>
+					</header>
+					<form action="exercicio.js" method="POST">
+                    <label for="exampleInputLogin">Login:</label>
+					<br>
+                    <input type="text" class="form-control" id="idlogin" aria-describedby="loginHelp" placeholder="Seu login">
+                    
+					<br>
+                    <label for="exampleInputSenha">Senha</label>
+                    
+					<br>
+					<input type="password" class="form-control" id="idPassword1" placeholder="Senha">   
+					
+					<br>
+                    <small class="form-text text-muted">Caso não tenha conta cadastrada, faça o registro <a href="cadastro2407.html">aqui</a></small>
+					
+					<br>
+                    <button type="submit" class="btn btn-primary" onclick="autenticar()">Autenticar</button>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+        </div>
+	</center>
+	</form>
+    </body>
+</html>

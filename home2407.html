@@ -1,0 +1,148 @@
+<html>
+    <head>
+		<style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+			background-color: #D97D48;
+			margin: 0;
+			
+        }
+		
+		header{
+			background-color: #F2B872;
+            height: 120px;
+			color: #732727;
+			margin-bottom: 10px;
+			margin-top:0px;
+			border-bottom: 5px solid #732727;
+			
+        }
+		
+        h1{           
+            color: #732727;
+            width: 290px;
+            padding: 15px;
+			
+        }
+		
+		label{
+			color: #732727;
+			margin-left: 15px;
+			font-weight: bold;
+			
+		}
+
+
+        form{
+            background-color: #F2B872;
+            border:3px solid #732727;
+            width: 550px;
+			padding: 25px;
+			
+			
+        }
+
+        input{
+            width: 300px;
+            border-bottom: 2px solid #732727 ;
+            margin: 7px;
+            padding: 8px;
+            border-left: #F2B872;
+			border-right: #F2B872;
+			border-top: #F2B872;
+			width: 520px;
+
+        }
+
+        input::placeholder{
+            color: #732727;
+            font-weight: bold;
+			
+			
+        }
+
+        button{
+            border:3px solid #732727 ;
+            background-color: #732727;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 28px;
+            width: 215px;
+			
+			
+        }
+		
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			border:3px solid #732727;;
+			color: #732727;
+			font-weight: bold;
+			color: #732727;
+			
+		}
+		
+		th{
+			background-color: #732727;
+			color: white;
+			width: 250px;
+		}
+		
+			
+		
+    </style>
+    </head>
+    <body>
+	<center>
+        <div class="container">
+
+			<header>
+            <h1>Cadastro de Produtos</h1>
+			</header>
+			
+			<form action="exercicio.js" method="POST">
+            <div class="row">
+                <div class="col-sm"> 
+                    <label for="idProduto"  >Produto</label><br>
+                    <input type="text" class="form-control" id="idProduto" placeholder="Produto"><br><br>
+                </div>
+                <div class="col-sm">
+                    <label for="idPreco" >Senha</label><br>
+                    <input type="text" class="form-control" id="idPreco" placeholder="Preço"><br><br>
+                </div>
+                <div class="col-sm">
+                    <label for="idQuantidade" >Senha</label><br>
+                    <input type="text" class="form-control" id="idQuantidade" placeholder="Quantidade"><br><br>
+                </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary" onclick='cadastrarProduto()'>Cadastrar</button>                    
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col-sm"> 
+                </br>
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Quantidade</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Arroz</td>
+                            <td>R$ 4,5</td>
+                            <td>3kg</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+		</center>
+		</form>
+    </body>
+</html>
